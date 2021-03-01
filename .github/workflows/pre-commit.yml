@@ -20,7 +20,7 @@ jobs:
     - uses: jamescurtin/isort-action@master
       with:
        requirementsFiles: "requirements.txt requirements-test.txt"
-       args: ". --profile black --check"
+ 
         
   
     
