@@ -26,4 +26,4 @@ def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
             return result
 
 
-print(find_maximum_and_minimum('some_file.txt'))
+
