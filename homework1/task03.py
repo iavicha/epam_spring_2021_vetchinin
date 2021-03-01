@@ -20,10 +20,10 @@ def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
     result = ()
 
     with open(file_name, "r") as file:
-        file = list(file.read().replace(" ", "").split(","))
-        print(file)
-        result: Tuple[int, int] = (int(min(file)), int(max(file)))
-        return result
+        for line in file:
+            file = list(line.replace(" ", "").split(","))
+            result: Tuple[int, int] = (int(min(file))), (int(max(file)))
+            return result
 
 
-# print(find_maximum_and_minimum('some_file.txt'))
+print(find_maximum_and_minimum('some_file.txt'))

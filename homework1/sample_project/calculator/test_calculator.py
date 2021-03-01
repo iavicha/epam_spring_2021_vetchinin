@@ -1,13 +1,14 @@
 import pytest
 
-from .homework1.sample_project.calculator.calc import check_power_of_2
+from homework1.sample_project.calculator.calc import check_power_of_2
 
 
 @pytest.mark.parametrize(
     ["value", "expected_result"],
     [
-        (65536, False),
+        (65536, True),
         (12, False),
+        (0, False)
     ],
 )
 def test_power_of_2(value: int, expected_result: bool):
