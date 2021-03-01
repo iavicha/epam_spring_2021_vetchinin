@@ -18,8 +18,7 @@ jobs:
       with:
         args: ". --check"
     - uses: jamescurtin/isort-action@master
-      with:
-       requirementsFiles: "requirements.txt requirements-test.txt"
+
  
         
   
