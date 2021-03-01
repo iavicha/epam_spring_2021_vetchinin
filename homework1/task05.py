@@ -10,7 +10,21 @@ Examples:
     result = 16
 """
 from typing import List
+from collections import deque
 
 
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
-    ...
+
+    if len(nums) <= k: return sum(nums)
+
+    if k <= 0: return 0
+
+    result = []
+    nums = deque(nums)
+    for i in range(len(nums) + 1):
+        if len(nums) >= k:
+            result.append(sum(list(nums)[0:3]))
+            nums.popleft()
+            nums = nums
+    return max(result)
+
