@@ -18,6 +18,3 @@ def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]) ->
                     if i + j + k + l == 0:
                         count += 1
     return count
-
-
-
