@@ -13,8 +13,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
     - uses: pre-commit/action@v2.0.0
-      with:
-        extra_args: isort --profile black --check --all-files
-    - uses: pre-commit/action@v2.0.0
-      with:
-        extra_args: black --check --all-files
+    - uses: pre-commit/isort@v2.0.0
+    - uses: pre-commit/black@v2.0.0
