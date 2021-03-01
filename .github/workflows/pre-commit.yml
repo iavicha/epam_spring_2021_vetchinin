@@ -15,10 +15,5 @@ jobs:
       with:
           python-version: 3.8
     - uses: pre-commit/action@v2.0.0
-    - uses: jamescurtin/isort-action@master
-      with:
-        requirementsFiles: "requirements.txt requirements-test.txt"
-        args: ". --profile black --check"
-    - uses: psf/black@stable
-      with:
-        args: ". --check"
+  
+    
