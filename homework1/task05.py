@@ -15,9 +15,11 @@ from collections import deque
 
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
 
-    if len(nums) <= k: return sum(nums)
+    if len(nums) <= k:
+        return sum(nums)
 
-    if k <= 0: return 0
+    if k <= 0:
+        return 0
 
     result = []
     nums = deque(nums)
@@ -27,4 +29,3 @@ def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
             nums.popleft()
             nums = nums
     return max(result)
-

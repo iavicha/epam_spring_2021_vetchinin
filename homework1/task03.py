@@ -22,8 +22,5 @@ def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
     with open(file_name, "r") as file:
         for line in file:
             file = list(line.replace(" ", "").split(","))
-            result: Tuple[int, int] = (int(min(file))), (int(max(file)))
+            result = (int(min(file))), (int(max(file)))
             return result
-
-
-
