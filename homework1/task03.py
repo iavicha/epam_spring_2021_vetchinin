@@ -19,8 +19,8 @@ from typing import Tuple
 def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
     result = ()
 
-    with open(file_name, 'r') as file:
-        file = list(file.read().replace(' ', '').split(','))
+    with open(file_name, "r") as file:
+        file = list(file.read().replace(" ", "").split(","))
         print(file)
         result: Tuple[int, int] = (int(min(file)), int(max(file)))
         return result
