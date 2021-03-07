@@ -17,10 +17,20 @@ from typing import Tuple
 
 
 def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
-    result = ()
+    result = []
+    min_max_result = []
 
     with open(file_name, "r") as file:
         for line in file:
-            file = list(line.replace(" ", "").split(","))
-            result = (int(min(file))), (int(max(file)))
-            return result
+            result = [
+                int(i)
+                for i in line.replace("[", "")
+                .replace("]", "")
+                .replace(" ", "")
+                .split(",")
+            ]
+            print(result)
+            print(file)
+            min_max_result.append(min(result))
+            min_max_result.append(max(result))
+    return min(min_max_result), max(min_max_result)
