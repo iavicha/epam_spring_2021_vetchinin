@@ -11,21 +11,18 @@ Examples:
 """
 from typing import List
 from collections import deque
+import itertools
 
 
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
-
-    if len(nums) <= k:
-        return sum(nums)
-
     if k <= 0:
-        return 0
+        exit('Think')
 
     result = []
     nums = deque(nums)
-    for i in range(len(nums) + 1):
-        if len(nums) >= k:
-            result.append(sum(list(nums)[0:3]))
-            nums.popleft()
-            nums = nums
+
+    while len(nums) > 0:
+        for one in range(1, k + 1):
+            result.append(sum(list(itertools.islice(nums, one))))
+        nums.popleft()
     return max(result)

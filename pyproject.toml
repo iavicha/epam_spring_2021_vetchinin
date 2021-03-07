@@ -1,0 +1,5 @@
+[tool.pytest.ini_options]
+testpaths = [
+    "homework1/tests",
+    "homework1/sample_project/calculator",
+]
