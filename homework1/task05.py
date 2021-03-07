@@ -16,7 +16,7 @@ import itertools
 
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
     if k <= 0:
-        exit('Think')
+        exit("Think")
 
     result = []
     nums = deque(nums)
