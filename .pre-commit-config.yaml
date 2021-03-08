@@ -8,12 +8,4 @@ repos:
     rev: 5.5.2
     hooks:
       - id: isort
-        files: 'tests/.*'
-#  - repo: local
-#    hooks:
-#      - id: pytest-check
-#        name: pytest-check
-#        entry: pytest
-#        language: system
-#        pass_filenames: false
-#        always_run: true
+
