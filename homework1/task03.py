@@ -29,8 +29,6 @@ def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
                 .replace(" ", "")
                 .split(",")
             ]
-            print(result)
-            print(file)
             min_max_result.append(min(result))
             min_max_result.append(max(result))
     return min(min_max_result), max(min_max_result)
