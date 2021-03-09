@@ -16,7 +16,6 @@ ACS = [chr(i) for i in range(127)]
 
 
 def get_longest_diverse_words(file_path: str) -> List[str]:
-    ...
     words = []
     with open(file_path, "r+", encoding="unicode-escape") as file:
         data = file.read()
@@ -60,10 +59,3 @@ def get_most_common_non_ascii_char(file_path: str) -> str:
             if i not in ACS and i not in d.keys():
                 d[i] = file.count(i)
     return max(d, key=d.get)
-
-
-print(count_punctuation_chars("data.txt"))
-print(get_rarest_char("data.txt"))
-print(count_non_ascii_chars("data.txt"))
-print(get_most_common_non_ascii_char("data.txt"))
-print(get_longest_diverse_words("data.txt"))
