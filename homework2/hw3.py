@@ -14,6 +14,7 @@ assert combinations([1, 2], [3, 4]) == [
     [2, 4],
 ]
 """
+
 from typing import Any, List
 
 
@@ -23,3 +24,6 @@ def combinations(*args: List[Any]) -> List[List]:
     for pool in pools:
         result = [x + [y] for x in result for y in pool]
     return result
+
+
+print(combinations([1, 2], [3, 4]))

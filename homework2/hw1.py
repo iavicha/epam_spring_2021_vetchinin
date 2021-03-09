@@ -26,7 +26,6 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
 
 
 def get_rarest_char(file_path: str) -> str:
-    ...
     a = {}
     with open(file_path, "r+", encoding="unicode-escape") as file:
         file = file.read()
@@ -37,21 +36,18 @@ def get_rarest_char(file_path: str) -> str:
 
 
 def count_punctuation_chars(file_path: str) -> int:
-    ...
     with open(file_path, "r+", encoding="unicode-escape") as file:
         file = file.read()
         return len([i for i in file if i in string.punctuation])
 
 
 def count_non_ascii_chars(file_path: str) -> int:
-    ...
     with open(file_path, "r", encoding="unicode-escape") as file:
         file = file.read()
         return len([i for i in file if i not in ACS])
 
 
 def get_most_common_non_ascii_char(file_path: str) -> str:
-    ...
     d = {}
     with open(file_path, "r", encoding="unicode-escape") as file:
         file = file.read()
