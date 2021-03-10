@@ -15,8 +15,6 @@ assert = custom_range(string.ascii_lowercase, 'p', 'g', -2) == ['p', 'n', 'l', '
 
 """
 
-import string
-
 
 def custom_range(data, a=None, b=None, c=None):
     if a is not None and b is None and c is None:
@@ -56,6 +54,3 @@ def custom_range(data, a=None, b=None, c=None):
                     result.append(i)
                     counter += 1
         return result
-
-
-print(custom_range(string.ascii_lowercase, "g", "p"))
