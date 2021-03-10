@@ -22,7 +22,12 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
         r = re.compile(r"(\w+)")
         words = r.findall(data)
         words = sorted(words, key=len)
-        return words[-11:-1]
+        if len(words) > 10:
+            return words[-11:-1]
+        elif len(words) > 1:
+            return words[-len(words) : -1]
+        else:
+            return words[0]
 
 
 def get_rarest_char(file_path: str) -> str:
