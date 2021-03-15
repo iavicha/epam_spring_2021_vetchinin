@@ -7,7 +7,7 @@ Given a file containing text. Complete using only default collections:
     5) Find most common non ascii char for document
 """
 
-
+import datetime
 import re
 import string
 from typing import List
@@ -23,7 +23,7 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
         words = r.findall(data)
         words = sorted(words, key=len)
         if len(words) > 10:
-            return words[-11:-1]
+            return words[-11:]
         elif len(words) > 1:
             return words[-len(words) : -1]
         else:
@@ -49,7 +49,7 @@ def count_punctuation_chars(file_path: str) -> int:
 def count_non_ascii_chars(file_path: str) -> int:
     with open(file_path, "r", encoding="unicode-escape") as file:
         file = file.read()
-        return len([i for i in file if i not in ACS])
+        return len([ord(i) for i in file if ord(i) > 127])
 
 
 def get_most_common_non_ascii_char(file_path: str) -> str:
@@ -57,6 +57,10 @@ def get_most_common_non_ascii_char(file_path: str) -> str:
     with open(file_path, "r", encoding="unicode-escape") as file:
         file = file.read()
         for i in file:
-            if i not in ACS and i not in d.keys():
+            if ord(i) > 127 and i not in d.keys():
                 d[i] = file.count(i)
     return max(d, key=d.get)
+
+
+print(count_non_ascii_chars("data.txt"))
+print(get_most_common_non_ascii_char("data.txt"))

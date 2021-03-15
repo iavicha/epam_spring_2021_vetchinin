@@ -23,6 +23,9 @@ def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
 
     while len(nums) > 0:
         for one in range(1, k + 1):
-            result.append(sum(list(itertools.islice(nums, one))))
+            result.append(sum(itertools.islice(nums, one)))
         nums.popleft()
     return max(result)
+
+
+print(find_maximal_subarray_sum([1, 3, -1, -3, 5, 3, 6, 7], 3))

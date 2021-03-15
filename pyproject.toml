@@ -3,5 +3,6 @@ testpaths = [
 #    "homework1/tests",
 #    "homework1/sample_project/calculator",
     "homework2/tests",
+    "homework3/tests"
 
 ]
