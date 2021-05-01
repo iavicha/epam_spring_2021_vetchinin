@@ -10,3 +10,4 @@ typed-ast==1.4.2
 typing-extensions==3.7.4.3
 
 pytest~=6.2.2
+mock~=4.0.3

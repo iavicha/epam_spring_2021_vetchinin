@@ -79,9 +79,10 @@ class Teacher:
         self.last_name = last_name
         self.first_name = first_name
 
-    def create_homework(self, text, days):
-        self.text = text
-        self.days = days
+    @classmethod
+    def create_homework(cls, text, days):
+        cls.text = text
+        cls.days = days
         return Homework(text, days)
 
 
@@ -103,7 +104,7 @@ class Homework:
         self.created = datetime.date.today()
 
     def is_active(self):
-        if self.created + self.deadline <= datetime.date.today():
+        if self.created + self.deadline >= datetime.date.today():
             return True
         else:
             return False
